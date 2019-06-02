@@ -1,14 +1,13 @@
 $(document).ready(function(){
+
 	var commentFormCheck = (function(){
 
 		// Переменные модуля
 		var _form = $('#comment-add-form');
 		var _commentTextarea = $('#commentText');
 		var _commentErrorEmpty = $('#commentErrorEmpty');
-		// var _commentTextareaTrim = _commentTextarea.val().trim();
-		// var _commentTextareaSubstring = _commentTextareaTrim.substring(0, 10);
-	
-			// Метод инициализации (запуска) модуля
+
+		// Метод инициализации (запуска) модуля
 		var init = function(){
                              // Запускаем модули которые должны стартовать при запуске модуля
 			_setUpListeners(); // Запускаем прослушку событий
@@ -25,21 +24,17 @@ $(document).ready(function(){
 		// Приватные методы
     	var _formValidate = function (event) {
     		// event.preventDefault();
-    		// console.log(_commentTextareaSubstring.val());
-    		// console.log(_commentTextarea.val().trim());
-    		console.log('Hello from _formValidation()');
-    		if ( _commentTextarea.val().trim() == '' ){
+    		if ( _commentTextarea.val() == '' ){
     			_commentErrorEmpty.fadeIn(500);
     			event.preventDefault();
     		} else {
-    			_commentErrorEmpty.fadeOut(500);
+    			_commentErrorEmpty.fadeOut();
+    			if (_commentTextarea.val() > 30){
+    				dd;
+    			}
     			// $('form').unbind('submit').submit();
     		}
-    		if (_commentTextarea.val().trim().length>10) {
-    			_commentTextarea.val().trim().substring(0, 20);
-    			console.log(_commentTextarea.val().trim().substring(0, 20));
-    		}
-    		
+    		//console.log(_commentTextarea.val());
 		}
 
 		// Возвращаем публичные медоты, которые будут доступны снаружи
